@@ -1,0 +1,134 @@
+<div class="cart container cards mt-5 pt-5">
+  <h1 class="text-center mb-5">Shopping Cart</h1>
+
+  <div class="info d-flex justify-content-evenly">
+    <p class="total fs-5">You Have {{ cartCounter }} Items</p>
+    <p-button
+      (click)="delete()"
+      label="Clear Shooping Cart"
+      [raised]="true"
+      severity="secondary"
+    ></p-button>
+  </div>
+  <div class="row mt-3 align-items-center d-none d-lg-flex d-md-flex head">
+    <div class="col-lg-2 col-md-2 col-sm-2"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 colors name">
+      <div class="head mb-5 fs-4 text-capitalize text-center p-1">name</div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 colors price">
+      <div class="head mb-5 fs-4 text-capitalize text-center p-1">price</div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 colors quantity">
+      <div class="head mb-5 fs-4 text-capitalize text-center p-1">quantity</div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 colors">
+      <div class="head mb-5 fs-4 text-capitalize text-center p-1">total</div>
+    </div>
+    <span class="ms-5 ps-4"></span>
+  </div>
+  @if (cartCounter>0) {
+  <div class="card mb-5">
+    @for (item of storedCart; track $index) {
+    <p-card class="card d-flex">
+      <div
+        class="cont d-flex flex-row justify-content-evenly align-self-center"
+      >
+        <div class="col-lg-2 col-md-2 col-sm-2 image">
+          <div class="body mb-4 mb-lg-0 mb-md-0">
+            <img alt="Card" [src]="item.image" />
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 name">
+          <div
+            class="body fs-6 text-center text-lg-start text-md-start mb-4 mb-lg-0 mb-md-0 fw-bold"
+          >
+            <h5 class="text-center mt-5">{{ item.title }}</h5>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 mt-5 col-sm-2 price">
+          <div class="body fs-5 text-center mb-4 mb-lg-0 mb-md-0 fw-bold">
+            <span class="price align-self-center mt-5">
+              <span class="fs-4 d-inline-block d-lg-none d-md-none"
+                >Price:</span
+              >
+              {{ item.price }}$</span
+            >
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 quantity mb-4 mb-lg-0 mb-md-0">
+          <div class="body d-flex justify-content-center align-items-center">
+            <p-inputNumber
+              [min]="1"
+              class="mt-5"
+              [(ngModel)]="item.quantity"
+              [showButtons]="true"
+              buttonLayout="vertical"
+              spinnerMode="vertical"
+              inputId="vertical"
+              decrementButtonClass="p-button-secondary"
+              incrementButtonClass="p-button-secondary"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+            ></p-inputNumber>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 total me-5 mb-4 mb-lg-0 mb-md-0">
+          <div class="body fs-5 text-center fw-bold">
+            <p class="align-self-center mt-5">
+              <span
+                class="fs-4 text-capitalize d-inline-block d-lg-none d-md-none"
+                >Total:</span
+              >
+              {{ item.quantity * item.price }}$
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 delete">
+          <div
+            class="body d-flex align-items-center justify-content-center justify-content-lg-start justify-content-md-start"
+          >
+            <p-button
+              (click)="deleteItem(item)"
+              class="mt-5"
+              label="Delete"
+              severity="secondary"
+            ></p-button>
+          </div>
+        </div>
+      </div> </p-card
+    >}
+    <div
+      class="footer h-100 mt-5 d-flex justify-content-end align-items-center"
+    >
+      <p class="mt-3 me-5 pe-4 fs-5 text-center total">
+        Total: {{ calculateTotal() }}$
+      </p>
+
+      <div class="card flex justify-content-center">
+        <p-dialog
+          [(visible)]="visible"
+          [modal]="true"
+          [style]="{ width: '50vw' }"
+          [draggable]="false"
+          [resizable]="false"
+        >
+          <p class="m-0 fs-4">
+            Your Order Has Been Placed Successfully {{ loggedUsername }} For
+            {{ calculateTotal() }}
+          </p>
+        </p-dialog>
+      </div>
+      <p-button
+        (click)="orderNow()"
+        class="m-3"
+        label="Order Now"
+        severity="secondary"
+      ></p-button>
+    </div>
+  </div>
+  }@if (cartCounter===0) {
+  <div class="text-center p-5 m-auto">
+    <p class="fs-1 danger">No items in the cart.</p>
+  </div>
+  }
+</div>

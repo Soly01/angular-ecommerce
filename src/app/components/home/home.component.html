@@ -1,0 +1,242 @@
+<div class="home p-5 mt-5">
+  <div class="container d-flex flex-wrap justify-content-center">
+    <div class="card mb-5 mt-5 w-75">
+      <p-galleria
+        class="w-100"
+        [value]="images"
+        [numVisible]="5"
+        [circular]="true"
+        [showItemNavigators]="true"
+        [showThumbnails]="false"
+        [responsiveOptions]="responsiveOptions"
+        [containerStyle]="{ 'max-width': '100%' }"
+      >
+        <ng-template pTemplate="item" let-image let-rowindex>
+          <img
+            class="box"
+            src="{{ image }}"
+            style="width: 100%; display: block"
+          />
+        </ng-template>
+      </p-galleria>
+    </div>
+    <div class="d-grid w-100 products">
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="image mt-3 position-relative">
+            <img
+              class="img mt-3"
+              alt="Card"
+              src="../../../assets/home/electronics1.avif
+            "
+            />
+            <img
+              class="hover-image mt-3"
+              src="../../../assets/home/electronics2.avif"
+              alt="Hover Image"
+            />
+          </div>
+        </ng-template>
+        <ng-template class="d-flex flex-wrap flex-column" pTemplate="footer">
+          <p class="fs-4 w-100 text-center info fw-bold">Elcetronics</p>
+
+          <p-button
+            (click)="electronics()"
+            class="text-center"
+            label="Show More"
+            severity="secondary"
+          ></p-button>
+        </ng-template>
+      </p-card>
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="image mt-3 position-relative">
+            <img
+              class="img mt-3"
+              alt="Card"
+              src="../../../assets/home/electronics4.avif
+            "
+            />
+            <img
+              class="hover-image mt-3"
+              src="../../../assets/home/electronics3.avif"
+              alt="Hover Image"
+            />
+          </div>
+        </ng-template>
+        <ng-template class="d-flex flex-wrap flex-column" pTemplate="footer">
+          <p class="fs-4 w-100 text-center info fw-bold">Elcetronics</p>
+
+          <p-button
+            (click)="electronics()"
+            class="text-center"
+            label="Show More"
+            severity="secondary"
+          ></p-button>
+        </ng-template>
+      </p-card>
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="image mt-3 position-relative">
+            <img
+              class="img mt-3"
+              alt="Card"
+              src="../../../assets/home/jewlery2.avif
+            "
+            />
+            <img
+              class="hover-image mt-3"
+              src="../../../assets/home/jewlery1.avif"
+              alt="Hover Image"
+            />
+          </div>
+        </ng-template>
+        <ng-template class="d-flex flex-wrap flex-column" pTemplate="footer">
+          <p class="fs-4 w-100 text-center info fw-bold">Jewellery</p>
+
+          <p-button
+            (click)="jeweleries()"
+            class="text-center"
+            label="Show More"
+            severity="secondary"
+          ></p-button>
+        </ng-template>
+      </p-card>
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="image mt-3 position-relative">
+            <img
+              class="img mt-3"
+              alt="Card"
+              src="../../../assets/home/jewlery3.avif
+            "
+            />
+            <img
+              class="hover-image mt-3"
+              src="../../../assets/home/jewlery4.avif"
+              alt="Hover Image"
+            />
+          </div>
+        </ng-template>
+        <ng-template class="d-flex flex-wrap flex-column" pTemplate="footer">
+          <p class="fs-4 w-100 text-center info fw-bold">Jewellery</p>
+
+          <p-button
+            (click)="jeweleries()"
+            class="text-center"
+            label="Show More"
+            severity="secondary"
+          ></p-button>
+        </ng-template>
+      </p-card>
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="image mt-3 position-relative">
+            <img
+              class="img mt-3"
+              alt="Card"
+              src="../../../assets/home/men2.avif
+            "
+            />
+            <img
+              class="hover-image mt-3"
+              src="../../../assets/home/men1.avif"
+              alt="Hover Image"
+            />
+          </div>
+        </ng-template>
+        <ng-template class="d-flex flex-wrap flex-column" pTemplate="footer">
+          <p class="fs-4 w-100 text-center info fw-bold">Men's Clothes</p>
+
+          <p-button
+            (click)="men()"
+            class="text-center"
+            label="Show More"
+            severity="secondary"
+          ></p-button>
+        </ng-template>
+      </p-card>
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="image mt-3 position-relative">
+            <img
+              class="img mt-3"
+              alt="Card"
+              src="../../../assets/home/men3.avif
+            "
+            />
+            <img
+              class="hover-image mt-3"
+              src="../../../assets/home/men4.avif"
+              alt="Hover Image"
+            />
+          </div>
+        </ng-template>
+        <ng-template class="d-flex flex-wrap flex-column" pTemplate="footer">
+          <p class="fs-4 w-100 text-center info fw-bold">Men's Clothes</p>
+
+          <p-button
+            (click)="men()"
+            class="text-center"
+            label="Show More"
+            severity="secondary"
+          ></p-button>
+        </ng-template>
+      </p-card>
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="image mt-3 position-relative">
+            <img
+              class="img mt-3"
+              alt="Card"
+              src="../../../assets/home/women1.avif
+            "
+            />
+            <img
+              class="hover-image mt-3"
+              src="../../../assets/home/women3.avif"
+              alt="Hover Image"
+            />
+          </div>
+        </ng-template>
+        <ng-template class="d-flex flex-wrap flex-column" pTemplate="footer">
+          <p class="fs-4 w-100 text-center info fw-bold">Women's Clothes</p>
+
+          <p-button
+            (click)="women()"
+            class="text-center"
+            label="Show More"
+            severity="secondary"
+          ></p-button>
+        </ng-template>
+      </p-card>
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="image mt-3 position-relative">
+            <img
+              class="img mt-3"
+              alt="Card"
+              src="../../../assets/home/women2.avif
+            "
+            />
+            <img
+              class="hover-image mt-3"
+              src="../../../assets/home/women4.avif"
+              alt="Hover Image"
+            />
+          </div>
+        </ng-template>
+        <ng-template class="d-flex flex-wrap flex-column" pTemplate="footer">
+          <p class="fs-4 w-100 text-center info fw-bold">Women's Clothes</p>
+
+          <p-button
+            (click)="women()"
+            class="text-center"
+            label="Show More"
+            severity="secondary"
+          ></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>

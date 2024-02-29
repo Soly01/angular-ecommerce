@@ -1,0 +1,53 @@
+.cards {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 30px;
+}
+.cards h1 {
+  background-color: var(--secondry-color);
+  color: var(--bs-danger);
+  border: 2px solid var(--secondry-color);
+  border-radius: 7px;
+  font-weight: 500;
+  transition: 1s;
+}
+.cards h1:hover {
+  color: var(--hover-color);
+}
+.cards h2 {
+  color: var(--bs-danger);
+}
+.title {
+  color: var(--bs-danger);
+}
+img {
+  transition: 1s;
+}
+img:hover {
+  filter: invert(1);
+}
+.cards p {
+  font-size: 18px;
+  color: var(--bs-danger);
+}
+.cards .my-list {
+  list-style: none;
+}
+.cards .my-list li {
+  color: var(--bs-danger);
+}
+.cards span {
+  animation: change 3s infinite linear;
+}
+@keyframes change {
+  0% {
+    color: var(--secondry-color);
+  }
+  100% {
+    color: var(--bs-danger);
+  }
+}

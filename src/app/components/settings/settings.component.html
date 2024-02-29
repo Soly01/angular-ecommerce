@@ -1,0 +1,108 @@
+<div class="card cards container mt-5 pt-5">
+  <h1 class="text-center">Settings</h1>
+  <div class="container cont mb-5 mt-5 justify-content-around d-flex flex-row">
+    <div class="buttons w-25 text-center d-flex flex-column gap-2 row">
+      <p-button
+        (click)="showContent('home')"
+        class="w-100 mb-2 mt-5"
+        severity="secondary"
+        label="Home"
+      ></p-button>
+      <p-button
+        (click)="showContent('settings')"
+        class="w-100 mb-2"
+        severity="secondary"
+        label="Account Settings"
+      ></p-button>
+      <p-button
+        (click)="showContent('apperance')"
+        class="w-100 mb-2"
+        severity="secondary"
+        label="Apperance"
+        severity="secondary"
+      ></p-button>
+      <p-button
+        (click)="showContent('history')"
+        class="w-100 mb-5"
+        severity="secondary"
+        label="History"
+      ></p-button>
+    </div>
+
+    @if (showHomeContent) {
+    <div class="info d-flex flex-column">
+      <h1 class="text-center text-capitalize">Hello {{ loggedusername }}</h1>
+      <span class="danger p-3 fs-5 text-capitalize fw-bold one"
+        >In Settings Section You Can Control Wheter You Want To :</span
+      >
+      <p class="p-3 fs-5 text-capitalize fw-bold one">
+        <span>1-</span> Delete Your Account
+      </p>
+      <p class="p-3 fs-5 text-capitalize fw-bold two">
+        <span>2-</span> Change The Theme Color Of The Site
+      </p>
+      <p class="p-3 fs-5 text-capitalize fw-bold three">
+        <span>3-</span> Show Your Purchase History
+      </p>
+    </div>
+    } @if (showSettingsContent) {
+    <div class="info d-flex w-50 flex-column">
+      <h1 class="text-center w-100 text-capitalize">Account Settings</h1>
+      <span class="text-danger p-3 fs-5 text-capitalize fw-bold one"
+        >You Can Delete Your Account Here...
+        <span class="note">Note :</span> Once The Account Deleted You Cant Know
+        What Is Your History Of Buying And You Must Register A New Account To
+        Enjoy Our Services...</span
+      >
+      <div class="but">
+        <p-button
+          (click)="delete()"
+          class="w-100 mb-5"
+          severity="secondary"
+          label="Delete Account"
+        ></p-button>
+      </div>
+    </div>
+    } @if (showapperanceContent) {
+    <div class="info d-flex w-50 flex-column">
+      <h1 class="text-center w-100 text-capitalize">Apperance</h1>
+      <span class="danger p-3 fs-5 text-capitalize fw-bold one"
+        >You Can Choose Your Favourite Theme Here...
+      </span>
+      <div class="d-flex pt-5">
+        <button (click)="changeTheme('redandblue')" class="blue me-2"></button>
+        <button
+          (click)="changeTheme('blackandgold')"
+          class="gold me-2"
+        ></button>
+        <button
+          (click)="changeTheme('cyanandblack')"
+          class="cyan me-2"
+        ></button>
+        <button (click)="changeTheme('whiteandgreen')" class="green"></button>
+      </div>
+    </div>
+    } @if (showhistoryContent) {
+    <div class="info d-flex w-50 text-center flex-column">
+      <h1 class="text-center w-100 text-capitalize">History</h1>
+      @if (userHistory.length === 0) {
+      <div class="fs-3 d-flex justify-content-center danger mt-5 mb-5">
+        No history available.
+      </div>
+      } @for (historyItem of userHistory; track $index) {
+      <div class="d-flex">
+        <h1 class="text-center fs-5 w-100 text-capitalize">
+          {{ historyItem.history }}
+        </h1>
+      </div>
+      }
+      <p-button
+        (click)="deleteHistory()"
+        class="w-100 mb-5"
+        severity="secondary"
+        label="Clear History"
+      ></p-button>
+    </div>
+    }
+  </div>
+</div>

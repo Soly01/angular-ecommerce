@@ -1,0 +1,42 @@
+<nav class="nav d-flex justify-content-between">
+  <div class="d-flex first">
+    <i
+      (click)="sideBarOpen()"
+      type="button"
+      class="side-bar-button me-3 danger p-3 fs-5 pi pi-align-justify"
+    ></i>
+    <p class="fs-2 danger align-self-center h1">E-Commerce</p>
+  </div>
+  <div class="p-toolbar-group-center tool w-50 align-self-center">
+    <span class="search d-flex p-input-icon-left">
+      <i class="pi pi-search danger"></i>
+      <input class="search-bar me-1 w-100" pInputText />
+      <p-button class="button" label="Search" severity="danger"></p-button>
+    </span>
+  </div>
+  <div class="avatarDiv me-3 d-flex align-self-center">
+    <i
+      (click)="cart()"
+      class="danger carti fs-3 align-self-center me-4 pi pi-shopping-cart"
+      pBadge
+      [value]="counterValue || '0'"
+    ></i>
+    <p-button
+      (click)="logOut()"
+      class="fs-6"
+      label="Log Out"
+      severity="danger"
+    ></p-button>
+    <p-avatar
+      (click)="profile()"
+      class="ms-1"
+      [image]="
+        user.image ||
+        'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png'
+      "
+      styleClass="mr-2"
+      size="large"
+      shape="circle"
+    ></p-avatar>
+  </div>
+</nav>

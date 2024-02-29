@@ -1,0 +1,114 @@
+.cards {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 30px;
+}
+.cards h1 {
+  background-color: var(--secondry-color);
+  color: var(--bs-danger);
+  border: 2px solid var(--secondry-color);
+  border-radius: 7px;
+  font-weight: 500;
+  transition: 1s;
+}
+.cards h1:hover {
+  color: var(--hover-color);
+}
+.cards p {
+  color: var(--text-color);
+}
+.buttons {
+  background-color: var(--secondry-color);
+  border-radius: 7px;
+  width: 300px;
+}
+.p-button.p-button-secondary,
+.p-buttonset.p-button-secondary > .p-button,
+.p-splitbutton.p-button-secondary > .p-button {
+  width: 75%;
+  border-radius: 7px;
+  color: var(--bs-danger) !important;
+  background-color: var(--background-color);
+  border-color: var(--bs-danger);
+}
+.info p {
+  color: var(--bs-danger);
+  opacity: 0;
+}
+.info .note {
+  color: var(--hover-color);
+}
+.one {
+  opacity: 0;
+  animation: listopacity 2s forwards;
+}
+.two {
+  opacity: 0;
+  animation: listopacity 2s 2s forwards;
+}
+.three {
+  opacity: 0;
+  animation: listopacity 2s 4s forwards;
+}
+.but {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  width: 100%;
+}
+.danger {
+  color: var(--bs-danger) !important;
+}
+.blue {
+  background-color: #00365c;
+  padding: 20px;
+  border-radius: 50%;
+  border-color: #dc3545;
+}
+.gold {
+  background-color: #edc580;
+  padding: 20px;
+  border-radius: 50%;
+  border-color: #000;
+}
+.cyan {
+  background-color: #5cd2b9;
+  padding: 20px;
+  border-radius: 50%;
+  border-color: #000;
+}
+.green {
+  background-color: #151a0a;
+  padding: 20px;
+  border-radius: 50%;
+  border-color: white;
+}
+@keyframes listopacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .cont {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .buttons {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+  .info {
+    width: 100% !important;
+  }
+  .cards h1 {
+    margin-left: -10px;
+  }
+}

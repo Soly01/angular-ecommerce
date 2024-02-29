@@ -1,0 +1,59 @@
+@import "primeicons/primeicons.css";
+* {
+  box-sizing: border-box;
+}
+.danger {
+  color: var(--bs-danger);
+}
+.p-badge {
+  color: var(--background-color);
+  background-color: var(--bs-danger);
+}
+.p-button.p-button-danger,
+.p-buttonset.p-button-danger > .p-button,
+.p-splitbutton.p-button-danger > .p-button {
+  color: var(--bs-danger);
+  background-color: var(--background-color);
+  border-color: var(--bs-danger);
+}
+nav.nav {
+  background-color: var(--background-color);
+}
+.search input {
+  border-radius: 7px;
+}
+.carti {
+  cursor: pointer;
+}
+.avatarDiv {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .tool {
+    width: auto !important;
+  }
+}
+@media (max-width: 576px) {
+  .tool {
+    width: 180px !important;
+  }
+  .h1 {
+    font-size: 15px !important;
+  }
+}
+@media (max-width: 425px) {
+  .first {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 375px) {
+  .tool {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  .avatarDiv {
+    justify-content: center;
+    width: 100%;
+  }
+}

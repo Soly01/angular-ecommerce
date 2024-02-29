@@ -1,0 +1,49 @@
+.completeRegister {
+  height: 95vh;
+  align-items: center;
+}
+.p-card .p-card-footer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.p-float-label label {
+  margin-top: -0.9rem;
+}
+.avatar {
+  position: relative;
+  left: 40%;
+  top: -45px;
+  z-index: 1;
+}
+.p-card-footer .p-button {
+  margin-top: 10px;
+  width: 100%;
+  margin-left: 0px !important;
+  background-color: var(--background-color);
+  color: var(--bs-danger);
+  border-color: var(--border-color);
+}
+.p-inputtext {
+  background-color: var(--background-color);
+  color: var(--bs-danger);
+  border-color: var(--border-color);
+}
+.p-card {
+  background-color: var(--background-color);
+  color: var(--bs-danger);
+}
+.p-button {
+  background-color: var(--background-color);
+  color: var(--bs-danger);
+  border-color: var(--border-color);
+  margin-left: 10px;
+}
+.p-radiobutton .p-radiobutton-box.p-highlight {
+  color: var(--bs-danger);
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+  background-color: var(--bs-danger);
+}

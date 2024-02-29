@@ -1,0 +1,130 @@
+.cards {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 30px;
+}
+.card {
+  border: none;
+}
+.p-card {
+  border: none;
+  background-color: var(--background-color);
+}
+.avatar img {
+  transition: 1s;
+}
+.avatar img:hover {
+  filter: grayscale(1);
+}
+.ava {
+  left: 435px;
+}
+h1 {
+  background-color: var(--secondry-color);
+  color: var(--bs-danger);
+  border: 2px solid var(--secondry-color);
+  border-radius: 7px;
+  font-weight: 500;
+  transition: 1s;
+}
+h1:hover {
+  color: #33bdd5;
+}
+.input,
+.p-inputtext {
+  text-align: center;
+  border-radius: 7px;
+  background-color: var(--secondry-color);
+  color: var(--text-color);
+}
+.email {
+  margin-left: 30px !important;
+}
+.first {
+  margin-left: -15px;
+}
+.phone {
+  margin-left: 20px;
+}
+.male {
+  margin-left: 10px;
+}
+.choose {
+  height: fit-content;
+}
+.label {
+  height: fit-content;
+
+  background-color: var(--secondry-color) !important;
+  border-color: var(--secondry-color);
+}
+.label:hover {
+  background-color: var(--black-color) !important;
+  color: #ffffff;
+  border-color: var(--black-color);
+}
+.username .user i {
+  animation: colorchange 3s infinite linear;
+}
+.danger {
+  color: var(--bs-danger);
+}
+.p-button.p-button-info,
+.p-buttonset.p-button-info > .p-button,
+.p-splitbutton.p-button-info > .p-button {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border-color: var(--text-color);
+}
+.p-button.p-button-secondary,
+.p-buttonset.p-button-secondary > .p-button,
+.p-splitbutton.p-button-secondary > .p-button {
+  color: var(--text-color);
+  background-color: var(--secondry-color) !important;
+  border-color: var(--secondry-color);
+}
+.danger {
+  color: var(--bs-danger);
+}
+@keyframes colorchange {
+  0% {
+    color: var(--bs-danger);
+  }
+
+  50% {
+    color: var(--hover-color);
+  }
+  100% {
+    color: var(--bs-danger);
+  }
+}
+@media (max-width: 576px) {
+  .username {
+    flex-direction: column !important;
+    justify-content: center;
+    text-align: center;
+  }
+  .input,
+  .p-inputtext {
+    display: flex;
+    justify-content: center;
+    width: 100% !important;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  .email,
+  .phone {
+    margin-left: 0 !important;
+  }
+  .first {
+    margin-left: 0;
+  }
+  .user {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}

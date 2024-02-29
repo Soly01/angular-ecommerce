@@ -1,0 +1,245 @@
+<div class="profile cards container mt-5 pt-5 d-flex justify-content-center">
+  <p-card class="card mb-5">
+    <ng-template pTemplate="header">
+      <div class="avatar d-flex justify-content-center">
+        <p-avatar
+          [image]="
+            profile.get('image')?.value ||
+            'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png'
+          "
+          styleClass="mr-2"
+          size="xlarge"
+          shape="circle"
+        ></p-avatar>
+
+        <label for="avatar" class="label p-button"> Choose File</label>
+        <input
+          type="file"
+          id="avatar"
+          class="d-none"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+        />
+        <p-button
+          class="ms-2"
+          (click)="saveImage()"
+          label="Save "
+          severity="info"
+        ></p-button>
+      </div>
+
+      <h1 class="text-center">Profile</h1>
+    </ng-template>
+    <form [formGroup]="profile" class="text">
+      <div class="username d-flex justify-content-between">
+        <div class="user align-items-center d-flex">
+          <i class="pi pi-user me-5"></i>
+          <span class="danger">Username</span>
+        </div>
+        <input
+          class="w-50 input"
+          type="text"
+          pInputText
+          formControlName="username"
+          [attr.disabled]="disabled ? true : null"
+        />
+        <div class="button">
+          <p-button
+            (click)="edit()"
+            class="me-3"
+            label="Edit"
+            severity="secondary"
+          ></p-button>
+          <p-button
+            (click)="saveChanges()"
+            label="Save"
+            severity="info"
+          ></p-button>
+        </div>
+      </div>
+      <div class="username mt-3 d-flex justify-content-between">
+        <div class="user align-items-center d-flex">
+          <i class="pi pi-eye me-5"></i>
+          <span class="danger">Password</span>
+        </div>
+        <p-password
+          class="input"
+          formControlName="password"
+          [attr.disabled]="disabled ? true : null"
+          [toggleMask]="true"
+        ></p-password>
+
+        <div class="button">
+          <p-button
+            (click)="edit()"
+            class="me-3"
+            label="Edit"
+            severity="secondary"
+          ></p-button>
+          <p-button
+            (click)="saveChanges()"
+            label="Save"
+            severity="info"
+          ></p-button>
+        </div>
+      </div>
+      <div class="username mt-3 d-flex justify-content-between">
+        <div class="user align-items-center d-flex">
+          <i class="pi pi-envelope me-5"></i>
+          <span class="danger">Email</span>
+        </div>
+        <input
+          class="w-50 email input"
+          type="text"
+          pInputText
+          formControlName="email"
+          [attr.disabled]="disabled ? true : null"
+        />
+        <div class="button">
+          <p-button
+            (click)="edit()"
+            class="me-3"
+            label="Edit"
+            severity="secondary"
+          ></p-button>
+          <p-button
+            (click)="saveChanges()"
+            label="Save"
+            severity="info"
+          ></p-button>
+        </div>
+      </div>
+      <div class="username mt-3 d-flex justify-content-between">
+        <div class="user align-items-center d-flex">
+          <i class="pi pi-info me-5"></i>
+          <span class="danger">First Name</span>
+        </div>
+        <input
+          class="w-50 first input"
+          type="text"
+          pInputText
+          formControlName="firstName"
+          [attr.disabled]="disabled ? true : null"
+        />
+        <div class="button">
+          <p-button
+            (click)="edit()"
+            class="me-3"
+            label="Edit"
+            severity="secondary"
+          ></p-button>
+          <p-button
+            (click)="saveChanges()"
+            label="Save"
+            severity="info"
+          ></p-button>
+        </div>
+      </div>
+      <div class="username mt-3 d-flex justify-content-between">
+        <div class="user align-items-center d-flex">
+          <i class="pi pi-info-circle me-5"></i>
+          <span class="danger">Last Name</span>
+        </div>
+        <input
+          class="w-50 first input"
+          type="text"
+          pInputText
+          formControlName="lastName"
+          [attr.disabled]="disabled ? true : null"
+        />
+        <div class="button">
+          <p-button
+            (click)="edit()"
+            class="me-3"
+            label="Edit"
+            severity="secondary"
+          ></p-button>
+          <p-button
+            (click)="saveChanges()"
+            label="Save"
+            severity="info"
+          ></p-button>
+        </div>
+      </div>
+      <div class="username mt-3 d-flex justify-content-between">
+        <div class="user align-items-center d-flex">
+          <i class="pi pi-phone me-5"></i>
+          <span class="danger">Phone</span>
+        </div>
+        <input
+          class="w-50 phone input"
+          type="text"
+          pInputText
+          formControlName="mobileNumber"
+          [attr.disabled]="disabled ? true : null"
+        />
+        <div class="button">
+          <p-button
+            (click)="edit()"
+            class="me-3"
+            label="Edit"
+            severity="secondary"
+          ></p-button>
+          <p-button
+            (click)="saveChanges()"
+            label="Save"
+            severity="info"
+          ></p-button>
+        </div>
+      </div>
+      <div class="username mt-3 d-flex justify-content-between">
+        <div class="user align-items-center d-flex">
+          <i class="pi pi-user-edit me-5"></i>
+          <span class="danger">Gender</span>
+        </div>
+        <input
+          class="w-50 male input"
+          type="text"
+          pInputText
+          formControlName="gender"
+          [attr.disabled]="disabled ? true : null"
+        />
+        <div class="button">
+          <p-button
+            (click)="edit()"
+            class="me-3"
+            label="Edit"
+            severity="secondary"
+          ></p-button>
+          <p-button
+            (click)="saveChanges()"
+            label="Save"
+            severity="info"
+          ></p-button>
+        </div>
+      </div>
+      <div class="username mt-3 d-flex justify-content-between">
+        <div class="user align-items-center d-flex">
+          <i class="pi pi-calendar me-5"></i>
+          <span class="danger">D.O.B</span>
+        </div>
+        <input
+          class="w-50 phone p-calendar input"
+          type="text"
+          pInputText
+          formControlName="birthdate"
+          [attr.disabled]="disabled ? true : null"
+        />
+
+        <div class="button">
+          <p-button
+            (click)="edit()"
+            class="me-3"
+            label="Edit"
+            severity="secondary"
+          ></p-button>
+          <p-button
+            (click)="saveChanges()"
+            label="Save"
+            severity="info"
+          ></p-button>
+        </div>
+      </div>
+    </form>
+  </p-card>
+</div>

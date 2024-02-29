@@ -1,0 +1,233 @@
+.cards {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 30px;
+}
+
+.cards h1 {
+  background-color: var(--secondry-color);
+  color: var(--bs-danger);
+  border: 2px solid var(--secondry-color);
+  border-radius: 7px;
+  font-weight: 500;
+  transition: 1s;
+  height: fit-content;
+}
+
+.cards h1:hover {
+  color: var(--hover-color);
+}
+
+.cards .container img {
+  border-radius: 30px;
+  transition: 1s;
+  height: 300px;
+}
+
+.cart {
+  border-color: var(--border-color);
+  box-shadow: var(--box-sahdow);
+}
+
+.card {
+  background-color: var(--background-color);
+}
+
+.card img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: 3px solid var(--bs-danger);
+  padding: 2px;
+  transition: 1s;
+  animation: scaleimg 3s infinite linear;
+  margin-left: 15px;
+}
+
+.price {
+  height: fit-content;
+}
+
+.p-card {
+  background-color: var(--secondry-color);
+  width: 100%;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+
+.cards h5 {
+  background-color: var(--background-color);
+  padding: 10px;
+  font-size: 14px;
+  overflow: hidden;
+  height: 100px;
+  border-radius: 7px;
+  color: var(--bs-danger);
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.colors {
+  color: var(--bs-danger);
+}
+.p-button.p-button-secondary,
+.p-buttonset.p-button-secondary > .p-button,
+.p-splitbutton.p-button-secondary > .p-button {
+  color: var(--bs-danger);
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+.cards p {
+  background-color: var(--background-color);
+  padding: 10px;
+  font-size: 14px;
+  overflow: hidden;
+  max-height: 100px;
+  overflow-y: auto;
+  text-align: center;
+  border-radius: 7px;
+  color: var(--bs-danger);
+  transition: 1s;
+  height: fit-content;
+}
+
+.cards .price {
+  background-color: var(--background-color);
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 7px;
+  color: var(--bs-danger);
+}
+
+.cards .p-button {
+  color: var(--bs-danger);
+}
+
+p-inputnumber,
+.p-inputnumber {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  flex-direction: row-reverse;
+}
+
+.p-inputnumber-buttons-vertical .p-inputnumber-input {
+  width: 50px;
+}
+
+.p-inputnumber-buttons-vertical {
+  width: 35%;
+}
+
+.footer {
+  background-color: var(--background-color);
+  border-radius: 7px;
+}
+
+.total {
+  text-align: center;
+  justify-content: center;
+  background-color: var(--secondry-color) !important;
+}
+
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content {
+  background-color: var(--background-color) !important;
+}
+
+@keyframes scaleimg {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 991px) {
+  .cards h1 {
+    font-size: 24px;
+  }
+  .cont {
+    gap: 10px;
+  }
+  .cards .container img {
+    height: 200px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cards h5 {
+    font-size: 12px;
+    height: 100px;
+  }
+
+  .cards p {
+    font-size: 12px;
+  }
+
+  .cards .price {
+    font-size: 12px;
+  }
+  .total {
+    margin-right: 0 !important;
+  }
+
+  .p-inputnumber,
+  .p-inputnumber {
+    width: 80%;
+  }
+
+  .p-inputnumber-buttons-vertical .p-inputnumber-input {
+    width: 40px;
+  }
+
+  .p-inputnumber-buttons-vertical {
+    width: 45%;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .cont {
+    flex-direction: column !important;
+    justify-content: center;
+  }
+  .body {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px !important;
+  }
+  .card img {
+    margin-left: 0;
+  }
+  .cards h5 {
+    margin-top: 20px !important;
+  }
+  .price {
+    margin-top: 20px !important;
+  }
+  .body p {
+    margin-top: 20px !important;
+  }
+  .total {
+    margin-bottom: 0px !important;
+  }
+}

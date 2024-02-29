@@ -1,0 +1,113 @@
+.cards {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 30px;
+}
+.cards h1 {
+  background-color: var(--secondry-color);
+  color: var(--bs-danger);
+  border: 2px solid var(--secondry-color);
+  border-radius: 7px;
+  font-weight: 500;
+  transition: 1s;
+}
+.cards h1:hover {
+  color: var(--hover-color);
+}
+.cards .container img {
+  border-radius: 30px;
+  transition: 1s;
+  height: 300px;
+}
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  height: 100%;
+  background-color: var(--background-color);
+
+  border-radius: 7px;
+}
+.card {
+  border-color: var(--border-color);
+  box-shadow: var(--box-sahdow);
+}
+
+.p-card {
+  background-color: var(--secondry-color);
+}
+.cards h5 {
+  background-color: var(--background-color);
+  padding: 10px;
+  font-size: 14px;
+  overflow: hidden;
+  height: 70px;
+  border-radius: 7px;
+  color: var(--bs-danger);
+  transition: 1s;
+}
+
+.cards p {
+  background-color: var(--background-color);
+  padding: 10px;
+  font-size: 14px;
+  overflow: hidden;
+  max-height: 100px; /* Adjust the max height as needed */
+  overflow-y: auto;
+  text-align: center;
+  border-radius: 7px;
+  color: var(--bs-danger);
+  transition: 1s;
+}
+.cards .price {
+  background-color: var(--background-color);
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 7px;
+  color: var(--bs-danger);
+}
+.cards .p-button {
+  color: var(--bs-danger);
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+p-inputnumber,
+.p-inputnumber {
+  display: flex;
+  justify-content: center;
+  width: 35%;
+  flex-direction: row-reverse;
+}
+.p-inputnumber-buttons-vertical .p-inputnumber-input {
+  width: 50px;
+}
+
+.p-inputnumber-buttons-vertical {
+  width: 35%;
+}
+@media (max-width: 425px) {
+  .d-grid {
+    margin-left: 0;
+    padding: 0;
+    margin-right: 0;
+  }
+}
+@media (max-width: 375px) {
+  .footer {
+    gap: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .cont {
+    width: 300px !important;
+  }
+  .cards .p-button {
+    font-size: 10px;
+  }
+}

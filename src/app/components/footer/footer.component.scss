@@ -1,0 +1,116 @@
+@import "primeicons/primeicons.css";
+
+* {
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: var(--background-color);
+}
+.footer .first img {
+  animation: blackandwhite 3s infinite linear;
+}
+.footer .first .copywrite .love {
+  color: #deb992;
+  animation: heartscale 3s infinite linear;
+}
+.list li {
+  color: var(--text-color);
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+.list li:hover {
+  color: var(--hover-color);
+}
+.text {
+  margin-bottom: 10px;
+}
+.mail {
+  background-color: var(--bs-danger);
+  color: var(--black-color);
+  border-radius: 59rem;
+  padding: 20px;
+  margin: 10px;
+}
+.info {
+  color: var(--text-color);
+}
+.facebook,
+.twitter,
+.linked,
+.youtube,
+.whatsapp {
+  color: #fff;
+  border-radius: 50%;
+  font-size: 25px;
+  transition: 1s;
+  animation: rotation 3s infinite linear;
+}
+.facebook {
+  background-color: #1877f2;
+}
+.twitter {
+  background-color: #1da1f2;
+}
+.linked {
+  background-color: #0077b5;
+}
+.youtube {
+  background-color: red;
+}
+.whatsapp {
+  background-color: #075e54;
+}
+.danger {
+  color: var(--bs-danger);
+}
+@media (max-width: 1440px) {
+  .mail {
+    margin: 0;
+  }
+}
+@media (max-width: 425px) {
+  .footer {
+    text-align: center;
+  }
+}
+@keyframes heartscale {
+  0% {
+    font-size: 16px;
+    color: #deb992;
+  }
+  50% {
+    font-size: 20px;
+    color: red;
+  }
+  50% {
+    font-size: 20px;
+    color: red;
+  }
+}
+@keyframes blackandwhite {
+  0% {
+    filter: grayscale(0%);
+  }
+  25% {
+    filter: grayscale(50%);
+  }
+  50% {
+    filter: grayscale(100%);
+  }
+  75% {
+    filter: grayscale(50%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

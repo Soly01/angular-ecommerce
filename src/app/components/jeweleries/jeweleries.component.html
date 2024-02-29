@@ -1,0 +1,46 @@
+<div class="cards container mt-5 pt-5">
+  <h1 class="text-capitalize text-center p-2 mb-5">Jeweleries</h1>
+  <div class="d-grid container">
+    @for (jewelery of jeweleries; track $index) {
+    <div class="cont">
+      <p-card class="card">
+        <ng-template pTemplate="header">
+          <div
+            routerLink="/details/{{ jewelery.id }}"
+            class="d-flex header justify-content-center align-items-center"
+          >
+            <img alt="Card" src="{{ jewelery.image }}" />
+          </div>
+        </ng-template>
+        <div class="info text-center">
+          <h5 class="text-center">{{ jewelery.title }}</h5>
+          <p class="pb-4 text-center">{{ jewelery.description }}</p>
+        </div>
+        <ng-template [formGroup]="cart" pTemplate="footer">
+          <div class="d-flex footer justify-content-between align-items-center">
+            <p-inputNumber
+              [min]="1"
+              formControlName="quantity"
+              [showButtons]="true"
+              buttonLayout="vertical"
+              spinnerMode="vertical"
+              inputId="vertical"
+              decrementButtonClass="p-button-secondary"
+              incrementButtonClass="p-button-secondary"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+            ></p-inputNumber>
+            <p-button
+              (click)="addToCart(jewelery)"
+              label="Add To Cart"
+              severity="secondary"
+            ></p-button>
+            <span class="price">{{ jewelery.price }} $</span>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+
+    }
+  </div>
+</div>

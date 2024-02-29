@@ -1,0 +1,72 @@
+<div
+  class="card cards container d-flex justify-content-center flex-column mt-5 mb-5"
+>
+  <div class="head text-center mb-5 mt-5">
+    <h1>Contact Us</h1>
+  </div>
+  <div class="word text-capitalize text-center mb-5">
+    <h2 class="p-2">Send Us An Email</h2>
+  </div>
+  <div class="happy text-capitalize text-center mb-5">
+    <h3>we will be happy hearing from you</h3>
+  </div>
+  <div class="form container w-50 d-flex flex-column">
+    <form
+      class="flex-column d-flex justify-content-center"
+      [formGroup]="contact"
+    >
+      <div class="mb-3 mt-3">
+        <input
+          placeholder="Name"
+          class="w-100"
+          type="text"
+          pInputText
+          formControlName="name"
+        />
+        @if (contact.get('name')?.hasError('required')) {
+        <span>Name is required</span>
+        }
+      </div>
+
+      <div class="mb-3 mt-3">
+        <input
+          placeholder="E-mail"
+          class="w-100"
+          type="text"
+          pInputText
+          formControlName="email"
+        />
+
+        @if (contact.get('name')?.hasError('required')) {
+
+        <span>Email is required</span>
+        }
+      </div>
+
+      <div class="mb-3 mt-3">
+        <textarea
+          formControlName="message"
+          placeholder="Message"
+          class="mt-3 mb-3 w-100"
+          rows="5"
+          cols="30"
+          pInputTextarea
+          [autoResize]="false"
+        ></textarea>
+
+        @if (contact.get('name')?.hasError('required')) {
+
+        <span>A message is required</span>
+        }
+      </div>
+
+      <p-button
+        (click)="onSubmit()"
+        class="text-center mt-5 mb-5"
+        label="Send"
+        severity="secondary"
+        [disabled]="contact.invalid"
+      ></p-button>
+    </form>
+  </div>
+</div>

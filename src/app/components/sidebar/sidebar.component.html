@@ -1,0 +1,60 @@
+<p-sidebar
+  class="d-flex sidebar justify-content-between"
+  [(visible)]="sidebarService.sidebarVisible1"
+>
+  <ng-template pTemplate="header">
+    <span class="me-5 span fs-3">E-commerce</span></ng-template
+  >
+  <ng-template pTemplate="content">
+    <div
+      class="sidebar mt-5 d-flex text-center justify-content-between flex-column"
+    >
+      <div routerLinkActive="isactive" class="dashboards mb-2 pb-3 p-2">
+        <i class="pi pi-home"></i>
+        <a routerLinkActive="color" routerLink="home">Home</a>
+      </div>
+      <div
+        routerLinkActive="isactive"
+        class="setiings m-auto pb-3 p-3 me-0 ms-0"
+      >
+        <i class="pi pi-cog"></i>
+        <a routerLinkActive="color" routerLink="settings">Settings</a>
+      </div>
+      <div routerLinkActive="isactive" class="profiles m-auto pb-3 p-2">
+        <i class="pi pi-user"></i>
+        <a routerLinkActive="color" routerLink="profile">Profile</a>
+      </div>
+      <div class="isactive" class="catogries d-flex align-self-center p-3">
+        Catogries
+      </div>
+      <div routerLinkActive="isactive" class="projects m-auto pb-3 p-3">
+        <i class="pi pi-android"></i>
+        <a routerLinkActive="color" routerLink="electronics">Electronics</a>
+      </div>
+      <div routerLinkActive="isactive" class="courses m-auto pb-3 p-3">
+        <i class="pi pi-star-fill"></i>
+        <a routerLinkActive="color" routerLink="jeweleries">Jeweleries</a>
+      </div>
+      <div routerLinkActive="isactive" class="friends m-auto pb-3 p-3">
+        <i class="pi pi-user-plus"></i>
+        <a routerLinkActive="color" routerLink="men">Men's Clothing </a>
+      </div>
+      <div routerLinkActive="isactive" class="files m-auto pb-3 p-3">
+        <i class="pi pi-user-minus"></i>
+        <a routerLinkActive="color" routerLink="women">Women's Clothing </a>
+      </div>
+      <div routerLinkActive="isactive" class="files m-auto pb-3 p-3">
+        <i class="pi pi-user-minus"></i>
+        <a routerLinkActive="color" routerLink="all">All Catogries</a>
+      </div>
+      <div routerLinkActive="isactive" class="plans m-auto pb-3 p-3">
+        <i class="pi pi-credit-card"></i>
+        <a routerLinkActive="color" routerLink="about">About Us </a>
+      </div>
+      <div routerLinkActive="isactive" class="plans m-auto pb-3 p-3">
+        <i class="pi pi-phone"></i>
+        <a routerLinkActive="color" routerLink="contact">Contact Us </a>
+      </div>
+    </div>
+  </ng-template>
+</p-sidebar>
