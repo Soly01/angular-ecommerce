@@ -13,7 +13,6 @@ export const routes: Routes = [
       import('./components/auth/register/register.component').then(
         (c) => c.RegisterComponent
       ),
-    canActivate: [AuthGuard],
   },
   {
     path: 'complete-register/:id',
@@ -21,7 +20,6 @@ export const routes: Routes = [
       import(
         './components/auth/complete-register/complete-register.component'
       ).then((c) => c.CompleteRegisterComponent),
-    canActivate: [AuthGuard],
   },
   {
     path: 'login',
