@@ -10,7 +10,7 @@
     </ng-template>
 
     <div class="d-flex log flex-wrap justify-content-center">
-      <span class="p-float-label mb-4">
+      <span class="p-float-label mb-4 w-100">
         <input
           formControlName="username"
           class="w-100"
@@ -19,9 +19,16 @@
           (ngModel)="(value)"
         />
         <label for="username">Username</label>
-        <small id="username-help">Username is Required.</small>
+        @if (login.get('username')?.dirty||login.get('username')?.touched) {
+        <small id="username-help"
+          >@if (login.get('username')?.hasError('required')) {
+          <span>Username Is Required</span>}
+          @if(login.get('username')?.hasError('minlength')) {
+          <span>Minmum Length is 6</span> }
+        </small>
+        }
       </span>
-      <span class="p-float-label mb-4">
+      <span class="p-float-label mb-4 w-100">
         <input
           formControlName="password"
           type="password"
@@ -31,7 +38,13 @@
           (ngModel)="(value)"
         />
         <label for="password">Password</label>
-        <small id="password-help">Password is Required.</small>
+        @if (login.get('password')?.dirty||login.get('password')?.touched) {
+        <small id="password-help"
+          >@if (login.get('password')?.hasError('required')) {
+          <span>Password Is Required</span>}
+          @if(login.get('password')?.hasError('minlength')) {
+          <span>Minmum Length is 6</span> } </small
+        >}
       </span>
     </div>
     <ng-template class="footer" pTemplate="footer">

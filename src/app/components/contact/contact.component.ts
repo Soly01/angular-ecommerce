@@ -9,7 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ContactService } from '../../../services/contact.service';
-import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-contact',
@@ -32,7 +32,10 @@ export class ContactComponent {
   });
   myData: any[] = [];
   loggedusername!: string;
-  constructor(private contactService: ContactService) {}
+  constructor(
+    private contactService: ContactService,
+    private messageService: MessageService
+  ) {}
   ngOnInit(): void {
     const loggeduser = localStorage.getItem('loggedUsername');
     if (loggeduser) {
@@ -60,6 +63,11 @@ export class ContactComponent {
       next: (res) => {
         console.log('success', res);
         this.contact.reset();
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Message Sent Successfully',
+        });
       },
       error: (err) => {
         console.log('error', err);

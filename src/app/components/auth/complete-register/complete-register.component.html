@@ -3,7 +3,7 @@
     class="align-self-center completeRegister d-flex justify-content-center"
     [style]="{ width: '360px' }"
   >
-    <div class="ms-4 align-items-center d-flex justify-content-center">
+    <div class="ms-4 mb-4 align-items-center d-flex justify-content-center">
       <p-avatar
         [image]="
           completeRegister.get('image')?.value ||
@@ -29,7 +29,7 @@
     </ng-template>
 
     <div class="d-flex flex-wrap justify-content-center">
-      <span class="p-float-label mb-4">
+      <span class="p-float-label mb-5 w-100">
         <input
           formControlName="firstName"
           class="w-100"
@@ -38,9 +38,16 @@
           (ngModel)="(value)"
         />
         <label for="firstName">First Name</label>
-        <small id="firstName-help">First Name is Required.</small>
+        @if(completeRegister.get('firstName')?.dirty||completeRegister.get('firstName')?.touched)
+        {<small id="firstName-help"
+          >@if (completeRegister.get('firstName')?.hasError('required')) {
+          <span>First Name Is Required</span>}
+          @if(completeRegister.get('firstName')?.hasError('minlength')) {
+          <span>Minmum Length is 6</span> }
+        </small>
+        }
       </span>
-      <span class="p-float-label mb-4">
+      <span class="p-float-label mb-5 w-100">
         <input
           formControlName="lastName"
           class="w-100"
@@ -49,9 +56,16 @@
           (ngModel)="(value)"
         />
         <label for="lastName">Last Name</label>
-        <small id="lastName-help">Last Name is Required.</small>
+        @if(completeRegister.get('lastName')?.dirty||completeRegister.get('lastName')?.touched)
+        {<small id="lastName-help"
+          >@if (completeRegister.get('lastName')?.hasError('required')) {
+          <span>Last Name Is Required</span>}
+          @if(completeRegister.get('lastName')?.hasError('minlength')) {
+          <span>Minmum Length is 6</span> }
+        </small>
+        }
       </span>
-      <span class="p-float-label mb-4">
+      <span class="p-float-label mb-5 w-100">
         <input
           formControlName="mobileNumber"
           class="w-100"
@@ -60,15 +74,29 @@
           (ngModel)="(value)"
         />
         <label for="mobileNumber">Mobile Number</label>
-        <small id="mobileNumber-help">Mobile Number is Required.</small>
+        @if(completeRegister.get('mobileNumber')?.dirty||completeRegister.get('mobileNumber')?.touched)
+        {<small id="lastName-help"
+          >@if (completeRegister.get('mobileNumber')?.hasError('required')) {
+          <span>Mobile Number Is Required</span>}
+          <br />
+          @if(completeRegister.get('mobileNumber')?.hasError('onlyNumbers')) {
+          <span>Type Numbers Only "123456789"</span>}
+        </small>
+        }
       </span>
-      <span class="p-float-label mb-4 w-100">
+      <span class="p-float-label mb-5 w-100">
         <p-calendar
           class="w-100"
           formControlName="birthdate"
           inputId="birth_date"
         ></p-calendar>
         <label for="birth_date">Birth Date</label>
+        <br />
+        @if(completeRegister.get('birtdate')?.invalid &&
+        completeRegister.get('birthdate')?.dirty||completeRegister.get('birthdate')?.touched
+        && completeRegister.get('birthdate')?.hasError('invalidDate')){
+        <small> Birth Date Is Required</small>
+        }
       </span>
       <div class="flex align-items-center me-3">
         <p-radioButton

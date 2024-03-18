@@ -1,5 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ValidatorFn,
+  AbstractControl,
+} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -45,8 +51,9 @@ export class CompleteRegisterComponent {
     mobileNumber: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
+      onlyNumbersValidator,
     ]),
-    birthdate: new FormControl('', [Validators.required]),
+    birthdate: new FormControl('', [Validators.required, validDateValidator()]),
     gender: new FormControl('', [Validators.required]),
     image: new FormControl('', [Validators.required]),
   });
@@ -102,4 +109,18 @@ export class CompleteRegisterComponent {
       reader.readAsDataURL(file);
     }
   }
+}
+function onlyNumbersValidator(
+  control: FormControl
+): { [s: string]: boolean } | null {
+  if (!/^\d+$/.test(control.value)) {
+    return { onlyNumbers: true }; // Returning an object representing the error
+  }
+  return null; // Returning null when the validation passes
+}
+function validDateValidator(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const valid = !isNaN(Date.parse(control.value));
+    return valid ? null : { invalidDate: true };
+  };
 }

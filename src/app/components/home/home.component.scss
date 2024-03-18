@@ -77,6 +77,15 @@
 .p-card .p-card-footer {
   flex-direction: column;
 }
+@media (max-width: 768px) {
+  .home {
+    display: flex;
+    text-align: -webkit-center;
+  }
+  .card {
+    width: 100% !important;
+  }
+}
 @media (max-width: 375px) {
   .d-grid {
     padding: 0;
